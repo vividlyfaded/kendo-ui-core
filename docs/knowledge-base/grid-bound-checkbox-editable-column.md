@@ -44,6 +44,7 @@ The Grid acquires two modes&mdash;read and edit. Its read mode displays the text
         var grid = $("#grid").data("kendoGrid"),
         dataItem = grid.dataItem($(e.target).closest("tr"));
         // add the dirty flag to the cell
+        $(e.target).closest("td").addClass('k-dirty-cell');
         $(e.target).closest("td").prepend("<span class='k-dirty'></span>");
 
         // use equals, not the set() method because set will trigger the change event of the data source and the grid will rebind
